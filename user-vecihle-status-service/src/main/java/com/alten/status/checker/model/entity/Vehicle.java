@@ -13,6 +13,8 @@ public class Vehicle {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
     private User user;
+    @Column(name = "CONNECTED")
+    private Boolean connected;
 
     public Vehicle() {
     }
@@ -39,5 +41,13 @@ public class Vehicle {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Boolean getConnected() {
+        return connected;
+    }
+
+    public void setConnected(Boolean connected) {
+        this.connected = connected;
     }
 }
