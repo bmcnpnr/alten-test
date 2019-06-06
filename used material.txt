@@ -1,0 +1,12 @@
+https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8
+https://dzone.com/articles/api-interaction-types-in-a-microservice-architectu
+https://www.scnsoft.com/blog/java-microservices-example
+https://github.com/vmudigal/microservices-sample
+https://medium.com/google-cloud/hosting-a-react-js-app-on-google-cloud-app-engine-6d1341b75d8c
+https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
+https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+https://github.com/mbrn/material-table
+https://www.baeldung.com/spring-boot-h2-database
+https://www.baeldung.com/spring-boot-access-h2-database-multiple-apps
+https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence-h2
+https://www.javacodegeeks.com/2018/08/integrate-h2-database-spring-boot-app.html
