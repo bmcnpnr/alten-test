@@ -28,6 +28,9 @@ export default function MaterialTableDemo() {
     <MaterialTable
       title="Editable Example"
       columns={state.columns}
+      options={{
+        filtering: true
+      }}
       data={state.data}
       editable={{
         onRowAdd: newData =>
