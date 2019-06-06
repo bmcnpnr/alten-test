@@ -11,7 +11,7 @@
     <groupId>com.alten</groupId>
     <artifactId>status.checker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>status.checker</name>
+    <name>Status Checker</name>
     <description>Vehicle status checker for users</description>
 
     <properties>

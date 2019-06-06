@@ -1,4 +1,4 @@
-package com.alten.status.checker.model;
+package com.alten.status.checker.model.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
