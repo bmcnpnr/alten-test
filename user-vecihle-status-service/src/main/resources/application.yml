@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: status-checker
+  datasource:
+    url: jdbc:h2:mem:uservehicle
+    driverClassName: org.h2.Driver
+    username: alten
+    password: alten
+  jpa:
+    databasePlatform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        trace: false
+        web-allow-others: false
+
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    preferIpAddress: true
+app:
+  dbInit: true

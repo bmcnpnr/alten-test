@@ -1,3 +1,4 @@
+spring.application.name = status-checker
 spring.datasource.url=jdbc:h2:mem:uservehicle
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=alten
@@ -10,4 +11,6 @@ spring.h2.console.settings.trace=false
 spring.h2.console.settings.web-allow-others=false
 
 server.port = 8080
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+eureka.instance.preferIpAddress=true
 app.db-init = true
