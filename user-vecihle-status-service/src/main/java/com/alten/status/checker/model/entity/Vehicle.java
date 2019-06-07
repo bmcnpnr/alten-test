@@ -6,8 +6,6 @@ import javax.persistence.*;
 @Table(name = "VEHICLE")
 public class Vehicle {
     @Id
-    @Column(name = "VEHICLE_ID")
-    private String vehicleId;
     @Column(name = "REGISTRATION_NUMBER")
     private String registrationNumber;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -17,14 +15,6 @@ public class Vehicle {
     private Boolean connected;
 
     public Vehicle() {
-    }
-
-    public String getVehicleId() {
-        return vehicleId;
-    }
-
-    public void setVehicleId(String vehicleId) {
-        this.vehicleId = vehicleId;
     }
 
     public String getRegistrationNumber() {

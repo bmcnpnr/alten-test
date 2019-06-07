@@ -13,8 +13,6 @@ public class User {
     private Integer id;
     @Column(name = "NAME")
     private String name;
-    @Column(name = "SURNAME")
-    private String surname;
     @Column(name = "ADDRESS")
     private String address;
     @OneToMany(
@@ -41,14 +39,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public String getAddress() {
