@@ -1,7 +1,7 @@
 package com.alten.status.simulator.service;
 
+import com.alten.status.simulator.model.dto.VehicleStatus;
 import com.alten.status.simulator.model.entity.Vehicle;
-import com.alten.status.simulator.model.entity.VehicleStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +12,10 @@ import java.util.Random;
 @Service
 public class StatusSimulator {
 
+    private final Random random = new Random();
     @Autowired
     private VehicleDAO vehicleDAO;
 
-    private final Random random = new Random();
     public List<VehicleStatus> getVehicleStatuses() {
         List<Vehicle> allVehicles = vehicleDAO.getAllVehicles();
         List<VehicleStatus> vehicleStatuses = new ArrayList<>();
@@ -26,5 +26,13 @@ public class StatusSimulator {
             vehicleStatuses.add(vehicleStatus);
         }
         return vehicleStatuses;
+    }
+
+    public VehicleDAO getVehicleDAO() {
+        return vehicleDAO;
+    }
+
+    public void setVehicleDAO(VehicleDAO vehicleDAO) {
+        this.vehicleDAO = vehicleDAO;
     }
 }

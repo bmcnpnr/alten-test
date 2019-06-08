@@ -1,4 +1,4 @@
-package com.alten.status.simulator.model.entity;
+package com.alten.status.simulator.model.dto;
 
 public class VehicleStatus {
     private String vehicleRegNumber;

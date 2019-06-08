@@ -16,9 +16,11 @@ public class DatabaseInitializer implements CommandLineRunner {
     @Autowired
     private VehicleDAO vehicleDAO;
 
+    private List<Vehicle> vehicleList = new ArrayList<>();
+
     @Override
     public void run(String... args) {
-        List<Vehicle> vehicleList = new ArrayList<>();
+
         Vehicle vehicle1 = new Vehicle();
         vehicle1.setVehicleId("YS2R4X20005399401");
         vehicle1.setRegistrationNumber("ABC123");
@@ -48,5 +50,17 @@ public class DatabaseInitializer implements CommandLineRunner {
         vehicle7.setRegistrationNumber("STU901");
         vehicleList.add(vehicle7);
         vehicleDAO.saveAll(vehicleList);
+    }
+
+    public VehicleDAO getVehicleDAO() {
+        return vehicleDAO;
+    }
+
+    public void setVehicleDAO(VehicleDAO vehicleDAO) {
+        this.vehicleDAO = vehicleDAO;
+    }
+
+    public void setVehicleList(List<Vehicle> vehicleList) {
+        this.vehicleList = vehicleList;
     }
 }
