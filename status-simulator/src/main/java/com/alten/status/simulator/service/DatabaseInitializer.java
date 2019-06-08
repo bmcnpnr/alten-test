@@ -56,10 +56,6 @@ public class DatabaseInitializer implements CommandLineRunner {
         return vehicleDAO;
     }
 
-    public void setVehicleDAO(VehicleDAO vehicleDAO) {
-        this.vehicleDAO = vehicleDAO;
-    }
-
     public void setVehicleList(List<Vehicle> vehicleList) {
         this.vehicleList = vehicleList;
     }

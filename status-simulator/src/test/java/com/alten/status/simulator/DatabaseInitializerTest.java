@@ -5,6 +5,7 @@ import com.alten.status.simulator.service.DatabaseInitializer;
 import com.alten.status.simulator.service.VehicleDAO;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class DatabaseInitializerTest {
     @Before
     public void initTest() {
         databaseInitializer = new DatabaseInitializer();
-        databaseInitializer.setVehicleDAO(mock(VehicleDAO.class));
+        ReflectionTestUtils.setField(databaseInitializer, "vehicleDAO", mock(VehicleDAO.class));
     }
 
     @Test

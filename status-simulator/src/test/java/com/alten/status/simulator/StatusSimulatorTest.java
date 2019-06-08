@@ -7,6 +7,7 @@ import com.alten.status.simulator.service.VehicleDAO;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class StatusSimulatorTest {
     @Before
     public void initTest() {
         statusSimulator = new StatusSimulator();
-        statusSimulator.setVehicleDAO( mock(VehicleDAO.class));
+        ReflectionTestUtils.setField(statusSimulator, "vehicleDAO", mock(VehicleDAO.class));
     }
 
     @Test

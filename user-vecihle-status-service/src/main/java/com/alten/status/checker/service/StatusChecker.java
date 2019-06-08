@@ -2,13 +2,9 @@ package com.alten.status.checker.service;
 
 import com.alten.status.checker.model.dto.UserVehicleStatus;
 import com.alten.status.checker.model.entity.Vehicle;
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,8 +15,6 @@ import java.util.Objects;
 
 @Service
 public class StatusChecker {
-    @Autowired
-    private UserDAO userDAO;
 
     @Autowired
     private VehicleDAO vehicleDAO;
@@ -39,7 +33,7 @@ public class StatusChecker {
                 = restTemplate.getForEntity(resourceUrl + "/getVehicleStatuses", String.class);
         JsonArray jsonArray = new JsonParser().
                 parse(Objects.requireNonNull(response.getBody())).getAsJsonArray();
-        jsonArray.forEach(item ->  {
+        jsonArray.forEach(item -> {
             String vehicleRegNumber = item.getAsJsonObject().get("vehicleRegNumber").getAsString();
             Vehicle vehicle = vehicleDAO.findByRegNumber(vehicleRegNumber);
             boolean connected = item.getAsJsonObject().get("connected").getAsBoolean();
@@ -60,5 +54,13 @@ public class StatusChecker {
             userVehicleStatuses.add(status);
         });
         return userVehicleStatuses;
+    }
+
+    public VehicleDAO getVehicleDAO() {
+        return vehicleDAO;
+    }
+
+    public RestTemplate getRestTemplate() {
+        return restTemplate;
     }
 }

@@ -20,4 +20,8 @@ public class VehicleDAO {
     public List<Vehicle> getAllVehicles() {
         return (List<Vehicle>) vehicleRepository.findAll();
     }
+
+    public VehicleRepository getVehicleRepository() {
+        return vehicleRepository;
+    }
 }

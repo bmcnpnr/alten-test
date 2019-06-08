@@ -5,8 +5,6 @@ import com.alten.status.checker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class UserDAO {
     @Autowired
@@ -14,10 +12,6 @@ public class UserDAO {
 
     public void save(User user) {
         repository.save(user);
-    }
-
-    public Iterable<User> findAllUsers() {
-        return repository.findAll();
     }
 
     public UserRepository getRepository() {

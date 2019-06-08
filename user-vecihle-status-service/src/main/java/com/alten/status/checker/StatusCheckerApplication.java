@@ -8,10 +8,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class Application {
+public class StatusCheckerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(StatusCheckerApplication.class, args);
     }
 
     @Bean

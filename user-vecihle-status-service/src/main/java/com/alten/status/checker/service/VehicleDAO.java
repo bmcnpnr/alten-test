@@ -14,19 +14,19 @@ public class VehicleDAO {
         return repository.findByRegistrationNumber(regNumber);
     }
 
-    public VehicleRepository getRepository() {
-        return repository;
-    }
-
-    public void setRepository(VehicleRepository repository) {
-        this.repository = repository;
+    public Iterable<Vehicle> findAllVehicles() {
+        return repository.findAll();
     }
 
     public void update(Vehicle vehicle) {
         repository.save(vehicle);
     }
 
-    public Iterable<Vehicle> findAllVehicles() {
-        return repository.findAll();
+    public VehicleRepository getRepository() {
+        return repository;
+    }
+
+    public void setRepository(VehicleRepository repository) {
+        this.repository = repository;
     }
 }

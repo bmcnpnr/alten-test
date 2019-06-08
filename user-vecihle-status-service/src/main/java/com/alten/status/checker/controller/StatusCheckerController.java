@@ -21,4 +21,12 @@ public class StatusCheckerController {
         List<UserVehicleStatus> vehicleStatuses = statusChecker.getVehicleStatuses();
         return new Gson().toJson(vehicleStatuses);
     }
+
+    public StatusChecker getStatusChecker() {
+        return statusChecker;
+    }
+
+    public void setStatusChecker(StatusChecker statusChecker) {
+        this.statusChecker = statusChecker;
+    }
 }

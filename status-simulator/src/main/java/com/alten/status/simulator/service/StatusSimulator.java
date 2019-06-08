@@ -32,7 +32,4 @@ public class StatusSimulator {
         return vehicleDAO;
     }
 
-    public void setVehicleDAO(VehicleDAO vehicleDAO) {
-        this.vehicleDAO = vehicleDAO;
-    }
 }

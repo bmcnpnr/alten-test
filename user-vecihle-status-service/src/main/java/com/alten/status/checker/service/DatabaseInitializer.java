@@ -80,4 +80,8 @@ public class DatabaseInitializer implements CommandLineRunner {
         user3.setVehicles(user3vehicles);
         userDAO.save(user3);
     }
+
+    public UserDAO getUserDAO() {
+        return userDAO;
+    }
 }
