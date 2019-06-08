@@ -16,7 +16,7 @@ public class StatusSimulator {
     private VehicleDAO vehicleDAO;
 
     private final Random random = new Random();
-    public List<VehicleStatus> getVehicleStatus() {
+    public List<VehicleStatus> getVehicleStatuses() {
         List<Vehicle> allVehicles = vehicleDAO.getAllVehicles();
         List<VehicleStatus> vehicleStatuses = new ArrayList<>();
         for (Vehicle vehicle : allVehicles) {
@@ -24,7 +24,6 @@ public class StatusSimulator {
             vehicleStatus.setConnected(random.nextBoolean());
             vehicleStatus.setVehicleRegNumber(vehicle.getRegistrationNumber());
             vehicleStatuses.add(vehicleStatus);
-
         }
         return vehicleStatuses;
     }

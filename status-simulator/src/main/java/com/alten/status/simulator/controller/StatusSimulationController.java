@@ -13,8 +13,8 @@ public class StatusSimulationController {
     @Autowired
     private StatusSimulator statusSimulator;
 
-    @RequestMapping("/getVehicleStatus")
-    public String getVehicleStatus() {
-        return new Gson().toJson(statusSimulator.getVehicleStatus());
+    @RequestMapping("/getVehicleStatuses")
+    public String getVehicleStatuses() {
+        return new Gson().toJson(statusSimulator.getVehicleStatuses());
     }
 }

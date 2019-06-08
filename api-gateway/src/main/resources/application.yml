@@ -12,7 +12,7 @@ spring:
         - id: status-simulator
           uri: http://localhost:8081
           predicates:
-            - Path=/statusSimulator/getVehicleStatus
+            - Path=/statusSimulator/getVehicleStatuses
 
 
 server:
