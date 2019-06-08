@@ -1,36 +1,32 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import MaterialTable from 'material-table';
 
 export default class StatusViewer extends Component {
+
+  componentDidMount() {
+    this.loadData();
+    setInterval(this.loadData, 60000);
+  }
   constructor(props) {
     super(props);
+    this.loadData = this.loadData.bind(this);
     this.state = {
       columns: [
-        { title: 'Name', field: 'name' },
-        { title: 'Surname', field: 'surname' },
-        { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
-        {
-          title: 'Birth Place',
-          field: 'birthCity',
-          lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
-        },
+        { title: 'User Name', field: 'name' },
+        { title: 'User Address', field: 'address' },
+        { title: 'Vehicle Id', field: 'vehicleId'},
+        { title: 'Vehicle Register Number', field: 'regNum'},
+        { title: 'Vehicle Status', field: 'connected', type: 'boolean'}
       ],
       data: [
-        { name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63 },
-        {
-          name: 'Zerya Betül',
-          surname: 'Baran',
-          birthYear: 2017,
-          birthCity: 34,
-        },
-      ],
+      ]
     };
   }
-  
+
   render() {
     return (
       <MaterialTable
-        title="Editable Example"
+        title="Vehicle Status Displayer"
         columns={this.state.columns}
         options={{
           filtering: true
@@ -39,5 +35,31 @@ export default class StatusViewer extends Component {
       />
     );
   }
-  
+
+  async loadData() {
+    try {
+      const res = await fetch('http://localhost:8762/statusChecker/checkStatusOfVehicles');
+    
+      const blocks = await res.json();
+      const userVehicleStatus = [];
+      blocks.forEach(item => {
+        const userVehicleStatusItem = {
+          'name': item.userName,
+          'address': item.userAddress,
+          'vehicleId': item.vehicleId,
+          'regNum': item.vehicleRegNumber,
+          'connected': item.vehicleStatus
+
+        };
+        userVehicleStatus.push(userVehicleStatusItem);
+      })
+      console.log();
+      this.setState({
+        data: userVehicleStatus
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
 }
