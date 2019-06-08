@@ -1,18 +1,19 @@
-pring:
+spring:
   application:
     name: api-gateway
   cloud:
     gateway:
       routes:
         - id: status-checker
-          uri: lb://status-checker
+          uri: http://localhost:8080
           predicates:
-            - Path=/statusChecker/**
+            - Path=/statusChecker/checkStatusOfVehicles
 
         - id: status-simulator
-          uri: lb://status-simulator
+          uri: http://localhost:8081
           predicates:
-            - Path=/statusSimulator/**
+            - Path=/statusSimulator/getVehicleStatus
+
 
 server:
   port: 8762

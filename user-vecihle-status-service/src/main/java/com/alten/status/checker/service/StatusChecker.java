@@ -15,6 +15,9 @@ public class StatusChecker {
     @Autowired
     private VehicleDAO vehicleDAO;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     public List<UserVehicleStatus> getVehicleStatus() {
         return null;
     }
