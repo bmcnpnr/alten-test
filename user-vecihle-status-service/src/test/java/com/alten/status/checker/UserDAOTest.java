@@ -6,11 +6,16 @@ import com.alten.status.checker.service.UserDAO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.mockito.Mockito.mock;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class UserDAOTest {
 
     private UserDAO userDAO;

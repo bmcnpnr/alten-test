@@ -7,9 +7,12 @@ import com.alten.status.checker.service.StatusChecker;
 import com.alten.status.checker.service.VehicleDAO;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +23,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.*;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class StatusCheckerTest {
     private static final String POSSIBLE_EXPECTATION = "[{\"vehicleRegNumber\":\"ABC123\",\"connected\":false},{\"vehicleRegNumber\":\"DEF456\",\"connected\":false},{\"vehicleRegNumber\":\"GHI789\",\"connected\":false},{\"vehicleRegNumber\":\"JKL012\",\"connected\":true},{\"vehicleRegNumber\":\"MNO345\",\"connected\":false},{\"vehicleRegNumber\":\"PQR678\",\"connected\":false},{\"vehicleRegNumber\":\"STU901\",\"connected\":false}]";
 
