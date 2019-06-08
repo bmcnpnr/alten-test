@@ -6,7 +6,6 @@ import com.alten.status.simulator.service.StatusSimulator;
 import com.alten.status.simulator.service.VehicleDAO;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.ArrayList;

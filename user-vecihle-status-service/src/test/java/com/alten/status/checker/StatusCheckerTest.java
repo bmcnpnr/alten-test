@@ -4,7 +4,6 @@ import com.alten.status.checker.model.dto.UserVehicleStatus;
 import com.alten.status.checker.model.entity.User;
 import com.alten.status.checker.model.entity.Vehicle;
 import com.alten.status.checker.service.StatusChecker;
-import com.alten.status.checker.service.UserDAO;
 import com.alten.status.checker.service.VehicleDAO;
 import org.junit.Before;
 import org.junit.Test;
