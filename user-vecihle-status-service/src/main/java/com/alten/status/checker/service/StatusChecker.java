@@ -28,7 +28,7 @@ public class StatusChecker {
     }
 
     private void updateTheVehicleStatusAtDb() {
-        String resourceUrl = "http://localhost:8762/statusSimulator";
+        String resourceUrl = "http://api-gateway:8762/statusSimulator";
         ResponseEntity<String> response
                 = restTemplate.getForEntity(resourceUrl + "/getVehicleStatuses", String.class);
         JsonArray jsonArray = new JsonParser().
