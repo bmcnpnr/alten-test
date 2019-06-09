@@ -38,7 +38,7 @@ export default class StatusViewer extends Component {
 
   async loadData() {
     try {
-      const res = await fetch('http://localhost:8762/statusChecker/checkStatusOfVehicles');
+      const res = await fetch('http://localhost:8762/STATUS-CHECKER/statusChecker/checkStatusOfVehicles');
     
       const blocks = await res.json();
       const userVehicleStatus = [];
