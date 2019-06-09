@@ -3,6 +3,10 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      discovery:
+        lower-case-service-id: true
+        locator:
+          enabled: true
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -11,14 +15,14 @@ spring:
               - GET
       routes:
         - id: status-checker
-          uri: http://localhost:8080
+          uri: lb://STATUS-CHECKER/statusChecker
           predicates:
-            - Path=/statusChecker/checkStatusOfVehicles
+            - Path=/statusChecker/**
 
         - id: status-simulator
-          uri: http://localhost:8081
+          uri: lb://STATUS-SIMULATOR/statusSimulator
           predicates:
-            - Path=/statusSimulator/getVehicleStatuses
+            - Path=/statusSimulator/**
 
 
 server:
