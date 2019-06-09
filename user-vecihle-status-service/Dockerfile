@@ -7,3 +7,5 @@ WORKDIR /usr/app
 RUN sh -c 'touch status-checker.jar'
 
 ENTRYPOINT ["java","-jar","status-checker.jar"]
+
+EXPOSE 8080

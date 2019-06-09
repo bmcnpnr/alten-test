@@ -7,3 +7,5 @@ WORKDIR /usr/app
 RUN sh -c 'touch api-gateway.jar'
 
 ENTRYPOINT ["java","-jar","api-gateway.jar"]
+
+EXPOSE 8762

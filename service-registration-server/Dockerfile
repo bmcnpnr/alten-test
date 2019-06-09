@@ -6,4 +6,6 @@ WORKDIR /usr/app
 
 RUN sh -c 'touch service-discovery.jar'
 
-ENTRYPOINT ["java","-jar","service-discovery.jar"]  
+ENTRYPOINT ["java","-jar","service-discovery.jar"]
+
+EXPOSE 8761

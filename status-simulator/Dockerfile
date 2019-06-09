@@ -7,3 +7,5 @@ WORKDIR /usr/app
 RUN sh -c 'touch status-simulator.jar'
 
 ENTRYPOINT ["java","-jar","status-simulator.jar"]
+
+EXPOSE 8081

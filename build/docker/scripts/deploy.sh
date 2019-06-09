@@ -4,6 +4,8 @@ cd ../../../service-registration-server
 
 mvn clean install
 
+echo "Starting to deploy ---"
+
 cd ../api-gateway
 
 mvn clean install
@@ -21,7 +23,5 @@ mvn clean install
 cd ../build/docker/
 
 # Deploy
-
-echo "Starting to deploy ---"
 
 docker-compose up --build -d

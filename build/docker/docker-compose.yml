@@ -25,10 +25,17 @@ services:
       - "8762:8762"
     expose:
       - "8762"
-    depends_on:
-      - service-discovery
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://service-discovery:8761"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
     networks:
       - backend
+    links:
+      - service-discovery
+    depends_on:
+      - service-discovery
 
   # ---------------------------
   # Status Checker Service
@@ -41,10 +48,19 @@ services:
       - "8080:8080"
     expose:
       - "8080"
-    depends_on:
-      - service-discovery
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://service-discovery:8761"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
     networks:
       - backend
+    links:
+      - api-gateway
+      - service-discovery
+    depends_on:
+      - api-gateway
+      - service-discovery
 
   # ---------------------------
   # Status Simulator Service
@@ -57,10 +73,19 @@ services:
       - "8081:8081"
     expose:
       - "8081"
-    depends_on:
-      - service-discovery
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://service-discovery:8761"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
     networks:
       - backend
+    links:
+      - api-gateway
+      - service-discovery
+    depends_on:
+      - api-gateway
+      - service-discovery
 
   # ---------------------------
   # Web Application
@@ -74,11 +99,13 @@ services:
       - /app/node_modules
     ports:
       - "5000:80"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://api-gateway:8762"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
     expose:
       - "5000"
-    depends_on:
-      - status-checker
-      - status-simulator
     networks:
       - frontend
 
