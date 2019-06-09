@@ -22,8 +22,10 @@ cd ../status-simulator
 
 docker build -t status-checker-webapp .
 
-docker run -d service-discovery
-docker run -d api-gateway
-docker run -d status-simulator
-docker run -d status-checker
-docker run -d status-checker-webapp
+# Enter docker-compose folder
+
+cd ../build/docker/
+
+# Deploy
+
+docker-compose up --build -d

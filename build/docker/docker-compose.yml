@@ -1,0 +1,84 @@
+version: '1.0'
+
+services:
+  # ---------------------------
+  # Service Discovery
+  # ---------------------------
+  service-discovery:
+    container_name: "service-discovery"
+    hostname: "service-discovery"
+    build: ../../service-registration-server/target
+    ports:
+      - "8761:8761"
+    expose:
+      - "8761"
+    networks:
+      - backend
+  # ---------------------------
+  # API Gateway
+  # ---------------------------
+  api-gateway:
+    container_name: "api-gateway"
+    hostname: "api-gateway"
+    build: ../../api-gateway/target
+    ports:
+      - "8762:8762"
+    expose:
+      - "8762"
+    networks:
+      - backend
+
+  # ---------------------------
+  # Status Checker Service
+  # ---------------------------
+  status-checker:
+    container_name: "status-checker"
+    hostname: "status-checker"
+    build: ../../user-vehicle-status-service/target
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    networks:
+      - backend
+
+  # ---------------------------
+  # Status Simulator Service
+  # ---------------------------
+  status-simulator:
+    container_name: "status-simulator"
+    hostname: "status-simulator"
+    build: ../../status-simulator/target
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    networks:
+      - backend
+
+  # ---------------------------
+  # Web Application
+  # ---------------------------
+  status-checker-webapp:
+    container_name: status-checker-webapp
+    image: nginx
+    build:
+      context: ../../status-checker
+      dockerfile: ../../Dockerfile
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+  
