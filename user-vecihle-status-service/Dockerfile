@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/status-checker.jar /usr/app/
+COPY ./status-checker.jar /usr/app/
 
 WORKDIR /usr/app
 

@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/status-simulator.jar /usr/app/
+COPY ./status-simulator.jar /usr/app/
 
 WORKDIR /usr/app
 

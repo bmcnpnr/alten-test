@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/service-discovery.jar /usr/app/
+COPY ./service-discovery.jar /usr/app/
 
 WORKDIR /usr/app
 
