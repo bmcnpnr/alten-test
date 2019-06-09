@@ -95,9 +95,9 @@ services:
     build:
       context: ../../status-checker/
     ports:
-      - "5000:5000"
+      - "80:80"
     expose:
-      - "5000"
+      - "80"
     healthcheck:
         test: ["CMD", "curl", "-f", "http://api-gateway:8762"]
         interval: 30s
