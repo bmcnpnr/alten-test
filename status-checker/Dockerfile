@@ -16,6 +16,6 @@ RUN npm run build
 
 WORKDIR /app
 
-CMD ["serve", "-s", "build"]
+CMD ["serve", "-p", "80", "-s", "build"]
 
-EXPOSE 5000
+EXPOSE 80
