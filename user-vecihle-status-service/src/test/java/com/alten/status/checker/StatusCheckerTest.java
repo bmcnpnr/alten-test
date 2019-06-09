@@ -36,7 +36,7 @@ public class StatusCheckerTest {
         ReflectionTestUtils.setField(statusChecker, "vehicleDAO", mock(VehicleDAO.class));
         ReflectionTestUtils.setField(statusChecker, "restTemplate", mock(RestTemplate.class));
 
-        String resourceUrl = "http://localhost:8762/statusSimulator";
+        String resourceUrl = "http://api-gateway:8762/statusSimulator";
         ResponseEntity<String> response = new ResponseEntity<>(POSSIBLE_EXPECTATION, HttpStatus.OK);
         when(statusChecker.getRestTemplate().getForEntity(resourceUrl + "/getVehicleStatuses", String.class))
                 .thenReturn(response);

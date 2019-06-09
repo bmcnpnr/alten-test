@@ -48,7 +48,7 @@ public class StatusCheckerControllerTest {
 
         final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 
-        mockServer.expect(requestTo("http://localhost:8762/statusSimulator/getVehicleStatuses"))
+        mockServer.expect(requestTo("http://api-gateway:8762/statusSimulator/getVehicleStatuses"))
                 .andExpect(method(HttpMethod.GET)).andRespond(withSuccess(POSSIBLE_EXPECTATION, MediaType.APPLICATION_JSON));
 
         MvcResult result = mockMvc.perform(get("/statusChecker/checkStatusOfVehicles"))
