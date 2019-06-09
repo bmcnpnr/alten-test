@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/api-gateway.jar /usr/app/
+COPY ./api-gateway.jar /usr/app/
 
 WORKDIR /usr/app
 
