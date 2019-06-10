@@ -7,8 +7,6 @@ jobs:
     steps: 
       - checkout
       - ls
-      - cd build/docker/scripts/
-      - ./clean.sh
-      - ./deploy.sh
+      - run: cd build/docker/scripts/ && ./clean.sh && ./deploy.sh
       - store_artifacts:
             path: ~/repo/features/screenshots
