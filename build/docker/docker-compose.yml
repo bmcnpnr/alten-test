@@ -100,9 +100,9 @@ services:
       context: ../../status-checker/
     image: bmcnpnr/status-checker-webapp
     ports:
-      - "80:80"
+      - "5000:5000"
     expose:
-      - "80"
+      - "5000"
     healthcheck:
         test: ["CMD", "curl", "-f", "http://api-gateway:8762"]
         interval: 30s
