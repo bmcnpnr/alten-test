@@ -43,7 +43,7 @@ services:
   status-checker:
     container_name: "status-checker"
     hostname: "status-checker"
-    build: ../../user-vecihle-status-service/target
+    build: ../../user-vehicle-status-service/target
     ports:
       - "8080:8080"
     expose:
