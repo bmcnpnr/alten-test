@@ -23,3 +23,5 @@ cd ../build/docker/
 # Deploy
 
 docker-compose up --build -d
+
+docker-compose push
