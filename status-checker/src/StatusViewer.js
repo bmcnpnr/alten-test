@@ -40,7 +40,7 @@ export default class StatusViewer extends Component {
     try {
       const dns = require('dns');
       dnsPromises = dns.promises;
-      let const = await dnsPromises.lookup(("api-gateway");
+      let data = await dnsPromises.lookup(("api-gateway");
       const res = await fetch('http://'+data+':8762/STATUS-CHECKER/statusChecker/checkStatusOfVehicles');
       const blocks = await res.json();
       const userVehicleStatus = [];
