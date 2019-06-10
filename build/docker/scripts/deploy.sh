@@ -23,5 +23,5 @@ cd ../build/docker/
 # Deploy
 
 docker-compose up --build -d
-
+docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
 docker-compose push
