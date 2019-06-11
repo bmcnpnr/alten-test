@@ -18,7 +18,7 @@ mvn clean install
 
 # Enter docker-compose folder
 
-cd ../build/docker/
+cd ../build/docker_build/
 
 # Deploy
 
